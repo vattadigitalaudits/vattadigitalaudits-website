@@ -9,127 +9,132 @@
   body{
     margin:0;
     font-family:Inter, sans-serif;
-    background: linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);
-    color:#0f172a;
+    background: radial-gradient(circle at top,#0f172a,#1e293b,#0b1220);
+    color:#e5e7eb;
   }
 
-  .container{max-width:1100px;margin:auto;padding:20px;}
-
   header{
-    background:#ffffffcc;
-    backdrop-filter: blur(10px);
     position:sticky;
     top:0;
-    border-bottom:1px solid #e2e8f0;
+    z-index:10;
+    background:rgba(15,23,42,0.75);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 20px;
+    max-width:1100px;
+    margin:auto;
+  }
+
+  .logo{font-weight:800;color:white;}
+
+  .nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:14px;
   }
 
   .btn{
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    background:linear-gradient(135deg,#6366f1,#3b82f6,#06b6d4);
     color:#fff;
-    padding:10px 18px;
+    padding:10px 16px;
     text-decoration:none;
     border-radius:10px;
     font-weight:600;
     display:inline-block;
-    margin:5px;
-    transition:0.2s;
-  }
-
-  .btn:hover{
-    transform:translateY(-2px);
   }
 
   .btn-whatsapp{
     background:linear-gradient(135deg,#25D366,#16a34a);
   }
 
-  .hero{
-    text-align:center;
-    padding:80px 20px;
-    background: radial-gradient(circle at top,#2563eb,#1d4ed8,#0f172a);
-    color:#fff;
-  }
+  section{padding:70px 20px;}
 
-  .tagline{
-    font-size:18px;
-    font-weight:600;
-    opacity:0.95;
-    margin-bottom:10px;
-  }
-
-  section{padding:60px 20px;}
-
-  h2{text-align:center;margin-bottom:25px;}
+  h2{text-align:center;color:#93c5fd;margin-bottom:25px;}
 
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:15px;
+    max-width:1100px;
+    margin:auto;
   }
 
   .card{
-    background:rgba(255,255,255,0.9);
-    padding:16px;
-    border:1px solid #e2e8f0;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:18px;
     border-radius:14px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.05);
     transition:0.2s;
   }
 
   .card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 28px rgba(0,0,0,0.08);
+    transform:translateY(-4px);
+    border-color:#3b82f6;
   }
 
-  /* PRICING */
+  /* PRICING TABLE */
+  .table-wrap{
+    max-width:1100px;
+    margin:auto;
+    overflow-x:auto;
+  }
+
   table{
     width:100%;
     border-collapse:collapse;
-    background:#fff;
+    background:rgba(255,255,255,0.03);
     border-radius:14px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  }
-
-  th,td{
-    padding:12px;
-    text-align:center;
-    border-bottom:1px solid #e2e8f0;
-    font-size:14px;
+    min-width:900px;
   }
 
   th{
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    color:#fff;
+    background:linear-gradient(135deg,#6366f1,#3b82f6);
+    color:white;
+    padding:14px;
+    font-size:14px;
+  }
+
+  td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    font-size:13px;
   }
 
   .old{
     text-decoration:line-through;
     color:#94a3b8;
-    font-size:13px;
+    font-size:12px;
   }
 
   .new{
-    font-size:20px;
+    font-size:18px;
     font-weight:800;
+    color:#60a5fa;
   }
 
-  .cta-center{
-    text-align:center;
-    margin-top:40px;
-    margin-bottom:60px;
+  .highlight{
+    background:rgba(59,130,246,0.08);
   }
 
-  .contact-banner{
-    background:linear-gradient(135deg,#1d4ed8,#2563eb);
-    color:white;
+  /* CONTACT */
+  .contact{
+    background:linear-gradient(135deg,#1d4ed8,#06b6d4);
     padding:40px 20px;
+    color:white;
   }
 
   .contact-inner{
     max-width:1100px;
     margin:auto;
-    text-align:left;
   }
 
   footer{
@@ -143,109 +148,181 @@
 <body>
 
 <header>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <b>Vatta Digital Audits</b>
-    <a class="btn" href="#contact">Get Audit</a>
+  <div class="nav">
+    <div class="logo">Vatta Digital Audits</div>
+    <div>
+      <a href="#problems">Problems</a>
+      <a href="#services">What We Do</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Get Audit</a>
+    </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="tagline">Launch with Proof, Not Assumptions.</div>
-  <h1>We Find Bugs Before Users Do</h1>
-
-  <a class="btn btn-whatsapp"
-     href="https://wa.me/919876543210?text=Hi%20Vatta%20Digital%20Audits,%20I%20want%20a%20QA%20audit">
-    Chat on WhatsApp
-  </a>
+<section style="text-align:center;">
+  <h1 style="color:white;">Launch with Proof, Not Assumptions.</h1>
+  <a class="btn btn-whatsapp" href="https://wa.me/919876543210">WhatsApp</a>
 </section>
 
 <!-- PROBLEMS -->
-<section>
+<section id="problems">
   <h2>Problems We Solve</h2>
-  <div class="container grid">
 
-    <div class="card">Bugs reaching production</div>
+  <div class="grid">
+    <div class="card">Bugs in production</div>
     <div class="card">Broken user flows</div>
     <div class="card">Bad UI experience</div>
+    <div class="card">Slow performance</div>
+    <div class="card">Mobile responsiveness issues</div>
+    <div class="card">UX confusion & drop-offs</div>
 
-    <!-- NEW 3 CARDS -->
-    <div class="card">Slow loading & performance issues</div>
-    <div class="card">Mobile responsiveness failures</div>
-    <div class="card">Lost users due to unclear UX flows</div>
-
+    <!-- NEW -->
+    <div class="card">Payment / checkout failures</div>
+    <div class="card">API / integration issues going unnoticed</div>
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section>
+<!-- SERVICES -->
+<section id="services">
   <h2>What We Do</h2>
-  <div class="container grid">
+
+  <div class="grid">
     <div class="card">Manual QA Testing</div>
-    <div class="card">UI & Functional Testing</div>
+    <div class="card">UI Testing</div>
     <div class="card">Responsive Testing</div>
     <div class="card">User Flow Testing</div>
     <div class="card">Bug Reports</div>
     <div class="card">Severity Classification</div>
+
+    <!-- NEW -->
+    <div class="card">Edge Case Testing</div>
+    <div class="card">Pre-Launch QA Audit Report</div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section>
-  <h2>Pricing</h2>
+<section id="pricing">
+  <h2>Pricing Comparison</h2>
 
-  <div class="container">
+  <div class="table-wrap">
     <table>
 
       <tr>
         <th>Feature</th>
         <th>Starter</th>
-        <th>Standard ⭐</th>
+        <th class="highlight">Standard ⭐</th>
         <th>Premium</th>
       </tr>
 
       <tr>
         <td>Price</td>
         <td><div class="old">₹3,999</div><div class="new">₹2,499</div></td>
-        <td><div class="old">₹6,999</div><div class="new">₹4,999</div></td>
+        <td class="highlight"><div class="old">₹6,999</div><div class="new">₹4,999</div></td>
         <td><div class="old">₹11,999</div><div class="new">₹8,999</div></td>
       </tr>
 
-      <tr><td>Best For</td><td>Landing Pages</td><td>MVPs</td><td>SaaS Apps</td></tr>
-      <tr><td>Website Size</td><td>Up to 5 Pages</td><td>Up to 15 Pages</td><td>Up to 30 Pages</td></tr>
-      <tr><td>Functional Testing</td><td>✔</td><td>✔</td><td>✔</td></tr>
-      <tr><td>UI Testing</td><td>✔</td><td>✔</td><td>✔</td></tr>
-      <tr><td>Responsive Testing</td><td>✔</td><td>✔</td><td>✔</td></tr>
-      <tr><td>User Flow</td><td>Basic</td><td>Complete</td><td>Complete</td></tr>
-      <tr><td>Browsers</td><td>Chrome + Edge</td><td>Chrome + Firefox</td><td>All + Safari</td></tr>
-      <tr><td>Devices</td><td>Desktop + Mobile</td><td>All Devices</td><td>All Devices</td></tr>
-      <tr><td>Bug Report</td><td>✔</td><td>✔</td><td>✔</td></tr>
-      <tr><td>Improvement Suggestions</td><td>—</td><td>✔</td><td>✔</td></tr>
-      <tr><td>Delivery</td><td>1–2 Days</td><td>2–4 Days</td><td>4–7 Days</td></tr>
+      <tr>
+        <td>Best For</td>
+        <td>Landing Pages & Small Websites</td>
+        <td class="highlight">MVPs & Small Web Apps</td>
+        <td>SaaS & Medium Apps</td>
+      </tr>
+
+      <tr>
+        <td>Website Size</td>
+        <td>Up to 5 Pages</td>
+        <td class="highlight">Up to 15 Pages</td>
+        <td>Up to 30 Pages</td>
+      </tr>
+
+      <tr>
+        <td>Functional Testing</td>
+        <td>✔</td><td class="highlight">✔</td><td>✔</td>
+      </tr>
+
+      <tr>
+        <td>UI Testing</td>
+        <td>✔</td><td class="highlight">✔</td><td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Responsive Testing</td>
+        <td>✔</td><td class="highlight">✔</td><td>✔</td>
+      </tr>
+
+      <tr>
+        <td>User Flow</td>
+        <td>Basic</td>
+        <td class="highlight">Complete</td>
+        <td>Complete</td>
+      </tr>
+
+      <tr>
+        <td>Browsers</td>
+        <td>Chrome + Edge</td>
+        <td class="highlight">Chrome + Firefox + Edge</td>
+        <td>All + Safari</td>
+      </tr>
+
+      <tr>
+        <td>Devices</td>
+        <td>Desktop + Mobile</td>
+        <td class="highlight">Desktop + Mobile + Tablet</td>
+        <td>All Devices (iOS included)</td>
+      </tr>
+
+      <tr>
+        <td>OS Coverage</td>
+        <td>Windows</td>
+        <td class="highlight">Windows + Android</td>
+        <td>Windows + Android + macOS + Linux</td>
+      </tr>
+
+      <tr>
+        <td>Bug Report</td>
+        <td>✔</td><td class="highlight">✔</td><td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Improvement Suggestions</td>
+        <td>—</td><td class="highlight">✔</td><td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Retest</td>
+        <td>1</td><td class="highlight">1</td><td>2</td>
+      </tr>
+
+      <tr>
+        <td>Delivery Time</td>
+        <td>1–2 Days</td>
+        <td class="highlight">2–4 Days</td>
+        <td>4–7 Days</td>
+      </tr>
 
     </table>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-center">
-  <a class="btn"
-     href="mailto:vatadigitalaudits@outlook.in?subject=QA Audit Request&body=Hi,%0AI want a QA audit.%0AWebsite link:">
+  <!-- CTA BUTTON -->
+<section style="text-align:center; padding:30px 20px;">
+  <a class="btn" href="mailto:vatadigitalaudits@outlook.in?subject=Get%20First%20QA%20Report&body=Hi%20Vatta%20Digital%20Audits,%0AI%20want%20a%20QA%20audit%20for%20my%20website.%0AWebsite:%20">
     Get Your First QA Report
   </a>
-</div>
+</section>
 
 <!-- CONTACT -->
-<section class="contact-banner" id="contact">
+<section id="contact" class="contact">
   <div class="contact-inner">
-    <h3>Contact Us</h3>
-    <p><b>Vatta Digital Audits</b></p>
-    <p>Email: vatadigitalaudits@outlook.in</p>
+    <h2 style="color:white;text-align:left;">Contact Us</h2>
+    <p>Vatta Digital Audits</p>
+    <p>vatadigitalaudits@outlook.in</p>
     <p>Mobile no.7505116741</p>
     <p>Linkedin: https://www.linkedin.com/company/vatta-digital-audits/
 </p>
-    <p>Location: Noida,India</p>
-    <p>Response: Within 24 hours</p>
+    <p>Noida,India</p>
   </div>
 </section>
 
