@@ -1,138 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vatta Digital Audits</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vatta Digital Audits — Manual QA for Web Apps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0f172a;
-        color: #e2e8f0;
-        line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: #f8faff;
+      color: #0f172a;
+      line-height: 1.6;
     }
+
+    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+
     header {
-        padding: 80px 20px;
-        text-align: center;
-        background: #111827;
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 15px 0;
     }
-    h1 {
-        font-size: 42px;
-        margin-bottom: 10px;
-    }
-    p {
-        color: #94a3b8;
-    }
+
     .btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 24px;
-        background: #38bdf8;
-        color: #0f172a;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 6px;
+      padding: 10px 18px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
     }
-    section {
-        max-width: 900px;
-        margin: auto;
-        padding: 60px 20px;
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg,#1d4ed8,#2563eb);
+      color: white;
     }
-    h2 {
-        color: #38bdf8;
-        margin-bottom: 20px;
+
+    section { padding: 70px 20px; }
+
+    h2 { text-align: center; margin-bottom: 30px; }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
     }
+
     .card {
-        background: #1e293b;
-        padding: 20px;
-        margin-bottom: 15px;
-        border-radius: 10px;
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
     }
-    .pricing {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
+
+    /* PRICING TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
-    .price-card {
-        background: #1e293b;
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #334155;
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 14px;
     }
-    .highlight {
-        border: 2px solid #38bdf8;
+
+    th {
+      background: #2563eb;
+      color: white;
     }
+
+    tr:nth-child(even) { background: #f8faff; }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      max-width: 600px;
+      margin: auto;
+    }
+
     footer {
-        text-align: center;
-        padding: 30px;
-        color: #64748b;
-        background: #111827;
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
     }
-</style>
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Vatta Digital Audits</h1>
-    <p>Manual QA Audits for Web Apps in 48 Hours</p>
-    <p>We find critical bugs, broken flows, and UX issues before your users do.</p>
-    <a class="btn" href="#contact">Get Free Audit</a>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <b>Vatta Digital Audits</b>
+    <a class="btn" href="#contact">Get Audit</a>
+  </div>
 </header>
 
-<section>
-    <h2>Problems We Solve</h2>
-    <div class="card">Bugs reaching production damage user trust and revenue</div>
-    <div class="card">Founders miss critical issues before launch</div>
-    <div class="card">Agencies deliver websites that break after deployment</div>
+<!-- HERO -->
+<section class="hero">
+  <h1>We Find Bugs Before Users Do</h1>
+  <p>Manual QA Audits for Web Apps in 48 Hours</p>
 </section>
 
+<!-- WHAT WE DO (CARDS) -->
 <section>
-    <h2>What We Do</h2>
-    <div class="card">Manual testing of full web applications</div>
-    <div class="card">Login, signup, checkout, forms, dashboards, mobile testing</div>
-    <div class="card">Bug reports with screenshots and severity levels</div>
-    <div class="card">Delivery in 24–48 hours</div>
+  <h2>What We Do</h2>
+  <div class="container grid">
+    <div class="card">Manual Web App Testing</div>
+    <div class="card">UI & Functional Testing</div>
+    <div class="card">Responsive Testing (Mobile/Desktop)</div>
+    <div class="card">User Flow Testing</div>
+    <div class="card">Bug Reports with Screenshots</div>
+    <div class="card">Severity Classification</div>
+  </div>
 </section>
 
+<!-- PRICING TABLE -->
 <section>
-    <h2>Pricing</h2>
-    <div class="pricing">
+  <h2>Pricing Comparison</h2>
+  <div class="container">
 
-        <div class="price-card">
-            <h3>Starter</h3>
-            <p><b>₹2,499</b> (Intro Offer)</p>
-            <p>Landing pages & small websites</p>
-        </div>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Starter</th>
+        <th>Standard ⭐ (Recommended)</th>
+        <th>Premium</th>
+      </tr>
 
-        <div class="price-card highlight">
-            <h3>Standard ⭐</h3>
-            <p><b>₹4,999</b></p>
-            <p>MVPs & small web apps</p>
-        </div>
+      <tr>
+        <td>Price</td>
+        <td>₹3,999 / ₹2,499</td>
+        <td>₹6,999 / ₹4,999</td>
+        <td>₹11,999 / ₹8,999</td>
+      </tr>
 
-        <div class="price-card">
-            <h3>Premium</h3>
-            <p><b>₹8,999</b></p>
-            <p>SaaS & medium web apps</p>
-        </div>
+      <tr>
+        <td>Best For</td>
+        <td>Landing Pages</td>
+        <td>MVPs & Small Apps</td>
+        <td>SaaS & Medium Apps</td>
+      </tr>
 
-    </div>
+      <tr>
+        <td>Website Size</td>
+        <td>Up to 5 Pages</td>
+        <td>Up to 15 Pages</td>
+        <td>Up to 30 Pages</td>
+      </tr>
+
+      <tr>
+        <td>Functional Testing</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+
+      <tr>
+        <td>UI Testing</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Responsive Testing</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+
+      <tr>
+        <td>User Flow Testing</td>
+        <td>Basic</td>
+        <td>Complete</td>
+        <td>Complete</td>
+      </tr>
+
+      <tr>
+        <td>Browsers</td>
+        <td>Chrome + Edge</td>
+        <td>Chrome + Edge + Firefox</td>
+        <td>All + Safari</td>
+      </tr>
+
+      <tr>
+        <td>Devices</td>
+        <td>Desktop + Mobile</td>
+        <td>Desktop + Mobile + Tablet</td>
+        <td>All Devices</td>
+      </tr>
+
+      <tr>
+        <td>OS Support</td>
+        <td>Windows</td>
+        <td>Windows + Android</td>
+        <td>All OS</td>
+      </tr>
+
+      <tr>
+        <td>Bug Report</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Improvement Suggestions</td>
+        <td>—</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+
+      <tr>
+        <td>Retest</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+
+      <tr>
+        <td>Delivery Time</td>
+        <td>1–2 Days</td>
+        <td>2–4 Days</td>
+        <td>4–7 Days</td>
+      </tr>
+
+    </table>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="card">
-        <p>Send your website/app link and we will audit it within 48 hours.</p>
-        <p><b>Email:</b> vatadigitalaudits@gmail.com</p>
-        <p><b>Response Time:</b> 24 hours</p>
-    </div>
-    <a class="btn" href="mailto:vatadigitalaudits@gmail.com">Email Us</a>
+  <h2>Contact Us</h2>
+
+  <div class="contact">
+    <p>Vatta Digital Audits</p>
+    <p>Manual QA Testing for Web Apps</p>
+    <br>
+    <p>Email: vatadigitalaudits@outlook.in</p>
+    <p>Mobile no.7505116741</p>
+    <p>Linkedin: https://www.linkedin.com/company/vatta-digital-audits/
+</p>
+    <p>Location: Noida,India</p>
+    <p>Response Time: Within 24 hours</p>
+    <br>
+
+    <a class="btn"
+       href="mailto:vatadigitalaudits@outlook.in?subject=QA Audit Request&body=Hi Vatta Digital Audits,%0A%0AI want a QA audit for my website/app.%0A%0AWebsite Link:%0A">
+      Get First QA Report
+    </a>
+  </div>
 </section>
 
 <footer>
-    © 2026 Vatta Digital Audits — Manual QA Testing for Startups & Agencies
+  © 2026 Vatta Digital Audits
 </footer>
 
 </body>
